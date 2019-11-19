@@ -28,11 +28,7 @@ function promptUser() {
                 choices: ['green', 'blue', 'pink', 'red']
             },
         ])
-
-
-
 };
-
 
 
 promptUser()
@@ -45,8 +41,21 @@ promptUser()
             console.log("URL" + queryURL);
             
             axios.get(queryURL)
-            .then((res) => {
-                console.log(res.data)
+            .then((answers) => {
+                
+                console.log(answers.data)
+                // profile pic id=  profilePic
+                // name is id= profileName
+                // company is id= company
+                // city is id= city
+                // github is id= gitHub
+                // blog is id= blog
+
+
+                // public repo id= publicRepo
+                // followers id= followers
+                // github stars id= gitStars
+                // following id= following
             })
 
         }
