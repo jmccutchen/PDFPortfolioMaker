@@ -1,39 +1,4 @@
-// const data= require("./index.js")
-
-
-
-const colors = {
-  green: {
-    wrapperBackground: "#E6E1C3",
-    headerBackground: "#C1C72C",
-    headerColor: "black",
-    photoBorderColor: "#black"
-  },
-  blue: {
-    wrapperBackground: "#5F64D3",
-    headerBackground: "#26175A",
-    headerColor: "white",
-    photoBorderColor: "#73448C"
-  },
-  pink: {
-    wrapperBackground: "#879CDF",
-    headerBackground: "#FF8374",
-    headerColor: "white",
-    photoBorderColor: "#FEE24C"
-  },
-  red: {
-    wrapperBackground: "#DE9967",
-    headerBackground: "#870603",
-    headerColor: "white",
-    photoBorderColor: "white"
-  }
-};
-
-// console.log("in HTML data" + data.color);
-// console.log("answersHTML" + answers.data)
-
-function generateHTML(data, answers) {
-  return `<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
    <head>
       <meta charset="UTF-8" />
@@ -59,7 +24,7 @@ function generateHTML(data, answers) {
          height: 100%;
          }
          .wrapper {
-         background-color: ${colors[data.color].wrapperBackground};
+         background-color: #E6E1C3;
          padding-top: 100px;
          }
          body {
@@ -101,8 +66,8 @@ function generateHTML(data, answers) {
          display: flex;
          justify-content: center;
          flex-wrap: wrap;
-         background-color: ${colors[data.color].headerBackground};
-         color: ${colors[data.color].headerColor};
+         background-color: #C1C72C;
+         color: black;
          padding: 10px;
          width: 95%;
          border-radius: 6px;
@@ -113,7 +78,7 @@ function generateHTML(data, answers) {
          border-radius: 50%;
          object-fit: cover;
          margin-top: -75px;
-         border: 6px solid ${colors[data.color].photoBorderColor};
+         border: 6px solid #black;
          box-shadow: rgba(0, 0, 0, 0.3) 4px 1px 20px 4px;
          }
          .photo-header h1, .photo-header h2 {
@@ -156,8 +121,8 @@ function generateHTML(data, answers) {
          .card {
            padding: 20px;
            border-radius: 6px;
-           background-color: ${colors[data.color].headerBackground};
-           color: ${colors[data.color].headerColor};
+           background-color: #C1C72C;
+           color: black;
            margin: 20px;
          }
          
@@ -190,14 +155,14 @@ function generateHTML(data, answers) {
         <main>
             <div class="wrapper">
                 <div class="photo-header">
-                    <img id="profilePic" src=${answers.data.avatar_url}>
+                    <img id="profilePic" src=https://avatars3.githubusercontent.com/u/54955520?v=4>
                     <h1>Hi!</h1>
-                    <h2 id="profileName">My name is ${answers.data.name}</h2>
-                    <h3 id="company">${answers.data.company} </h3>
+                    <h2 id="profileName">My name is John McCutchen</h2>
+                    <h3 id="company">null </h3>
                     <div class="row links-nav ">
-                        <h4 id="city" class="col nav-link" src="https://maps.google.com/?q=${data.location}" "target=_blank">${data.location}</h4>
-                        <h4 id="gitHub" class="col nav-link" scr=${answers.data.url} target="_blank">GitHub</h4>
-                        <h4 id="blog" class="col nav-link" src=${answers.data.blog} target="_blank">Blog</h4>
+                        <h4 id="city" class="col nav-link" src="https://maps.google.com/?q=Strafford, NH" "target=_blank">Strafford, NH</h4>
+                        <h4 id="gitHub" class="col nav-link" scr=https://api.github.com/users/jmccutchen target="_blank">GitHub</h4>
+                        <h4 id="blog" class="col nav-link" src= target="_blank">Blog</h4>
                     </div>
                 </div>
             </div>
@@ -207,12 +172,12 @@ function generateHTML(data, answers) {
             <h3 class="text-center">I build things and teach people to code</h3>
 
             <div class="row">
-                <div id="publicRepo" class="card col">Public Repositories <br> ${answers.data.public_repos}</div>
-                <div id="followers" class="card col">Followers <br> ${answers.data.followers}</div>
+                <div id="publicRepo" class="card col">Public Repositories <br> 11</div>
+                <div id="followers" class="card col">Followers <br> 1</div>
             </div>
             <div class="row">
-                <div id="gitStars" class="card col">GitHub Stars <br> ${answers.data.public_gists}</div>
-                <div id="following" class="card col">Following <br> ${answers.data.following}</div>
+                <div id="gitStars" class="card col">GitHub Stars <br> 0</div>
+                <div id="following" class="card col">Following <br> 0</div>
             </div>
             <div class="wrapper"></div>
         </main>
@@ -220,12 +185,4 @@ function generateHTML(data, answers) {
     </div>
 
 
-</body>`
-}
-
-// module.exports = {
-//   colors: colors,
-//   generateHTML: generateHTML
-// };
-
-module.exports = generateHTML;
+</body>

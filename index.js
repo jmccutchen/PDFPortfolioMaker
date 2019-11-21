@@ -3,8 +3,16 @@ const fs = require("fs");
 const util = require("util");
 const axios = require("axios");
 const generateHTML = require("./generateHTML.js")
+const convertHTMLToPDF = require("pdf-puppeteer");
+
+// var callback = function (pdf) {
+//     res.setHeader("Content-Type", "application/pdf");
+//     res.send(pdf);
+// }
+
 
 const writeToFile = util.promisify(fs.writeFile);
+
 
 
 function promptUser() {
@@ -33,37 +41,67 @@ function promptUser() {
 
 promptUser()
     .then(data => {
-        let username = data.username
+        let username = data.username;
+        let colors = data.colors;
+        let location = data.location;
+
         const getUsers = () => {
             const queryURL = `https://api.github.com/users/${username}`;
-            const gitData = JSON.stringify(data);
-            console.log("git" + gitData)
-            console.log("URL" + queryURL);
-            
+
             axios.get(queryURL)
-            .then((answers) => {
-                
-                console.log(answers.data)
-                // profile pic id=  profilePic
-                // name is id= profileName
-                // company is id= company
-                // city is id= city
-                // github is id= gitHub
-                // blog is id= blog
-
-
-                // public repo id= publicRepo
-                // followers id= followers
-                // github stars id= gitStars
-                // following id= following
-            })
+                .then((answers) => {
+                    // console.log("answers" + answers.data)
+                    console.log("in axios data" + data);
+                    console.log(queryURL)
+                    console.log(answers.data.id)
+                    console.log("answers" + answers.data)
+                    dataJSONString= JSON.stringify(data)
+                    console.log("JSON" + dataJSONString)
+                    
+                    const html = generateHTML(data, answers)
+                    console.log("html" + html)
+                    return writeToFile("Portfolio.html", html)
+                })
 
         }
-        getUsers(username)
-       
-        });
-    
-    
+        getUsers()
+    })
+    // .then((data, answers) => {
+        
+
+    //     // ;
+    // }) 
+
+                    // profile pic id=  profilePic
+                    // name is id= profileName
+                    // company is id= company
+                    // city is id= city
+                    // github is id= gitHub
+                    // blog is id= blog
+
+
+                    // public repo id= publicRepo
+                    // followers id= followers
+                    // github stars id= gitStars
+                    // following id= following
+
+
+                // .then(() => {
+
+
+
+                // })
+        //         // .then(() => {
+        //         //     convertHTMLToPDF("Portfolio.pdf", callback)
+        //         // })
+        //         .catch( (err) => console.log(err))
+
+
+
+// console.log("outside", answers)
+
+        // console.log("question" + data)
+
 
 
 
@@ -84,3 +122,8 @@ promptUser()
 // };
 
 // init();
+
+// module.exports = {
+//     answers: answers,
+//     data: data
+//   };
