@@ -193,28 +193,36 @@ function generateHTML(data, answers) {
                     <img id="profilePic" src="${answers.data.avatar_url}">
                     <h1>Hi!</h1>
                     <h2 id="profileName">My name is ${answers.data.name}</h2>
-                    <h3 id="company">Currently working at ${answers.data.company} </h3>
+                    <h3 id="company">Currently @ ${answers.data.company} </h3>
                     <div class="row links-nav ">
-                        <h4 id="city" class="col nav-link"><a href="https://maps.google.com/?q=${data.location}" target="_blank">${data.location}</a></h4>
+                        <h4 id="city" class="col nav-link">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=${data.location}" target="_blank">${data.location}</a>
+                        </h4>
                         <h4 id="gitHub" class="col nav-link">
+                        <i class="fab fa-github"></i>
                         <a href="${answers.data.html_url}" target="_blank">GitHub</a>
                         </h4>
-                        <h4 id="blog" class="col nav-link"><a href="${answers.data.blog}" target="_blank">Blog</a></h4>
+                        <h4 id="blog" class="col nav-link">
+                        <i class="fas fa-blog"></i>
+                        <a href="${answers.data.blog}" target="_blank">Blog</a>
+                        </h4>
                     </div>
                 </div>
             </div>
 
             <br>
             <br>
+            <br>
             <h3 class="text-center">I build things and teach people to code</h3>
 
             <div class="row">
-                <div id="publicRepo" class="card col">Public Repositories <br> ${answers.data.public_repos}</div>
-                <div id="followers" class="card col">Followers <br> ${answers.data.followers}</div>
+                <h4 id="publicRepo" class="card col">Public Repositories <br> ${answers.data.public_repos}</h4>
+                <h4 id="followers" class="card col">Followers <br> ${answers.data.followers}</h4>
             </div>
             <div class="row">
-                <div id="gitStars" class="card col">GitHub Stars <br> ${answers.data.public_gists}</div>
-                <div id="following" class="card col">Following <br> ${answers.data.following}</div>
+                <h4 id="gitStars" class="card col">GitHub Stars <br> ${answers.data.public_gists}</h4>
+                <h4 id="following" class="card col">Following <br> ${answers.data.following}</h4>
             </div>
             <div class="wrapper"></div>
         </main>

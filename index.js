@@ -5,6 +5,7 @@ const axios = require("axios");
 const generateHTML = require("./generateHTML.js")
 const writeToFile = util.promisify(fs.writeFile)
 const puppeteer = require("puppeteer")
+const open = require("open")
 
 
 function promptUser() {
@@ -60,8 +61,12 @@ promptUser()
             path: 'portfolio.pdf'
         });
 
-        // await browser.close();
-    })
+        await browser.close();
+
+      }).then (async () => {
+        await open("./Portfolio.html")
+
+      })
 
     .catch( (err) => console.log(err))
   

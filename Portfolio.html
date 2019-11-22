@@ -24,7 +24,7 @@
          height: 100%;
          }
          .wrapper {
-         background-color: #879CDF;
+         background-color: #E6E1C3;
          padding-top: 100px;
          }
          body {
@@ -66,8 +66,8 @@
          display: flex;
          justify-content: center;
          flex-wrap: wrap;
-         background-color: #FF8374;
-         color: white;
+         background-color: #C1C72C;
+         color: black;
          padding: 10px;
          width: 95%;
          border-radius: 6px;
@@ -78,7 +78,7 @@
          border-radius: 50%;
          object-fit: cover;
          margin-top: -75px;
-         border: 6px solid #FEE24C;
+         border: 6px solid #black;
          box-shadow: rgba(0, 0, 0, 0.3) 4px 1px 20px 4px;
          }
          .photo-header h1, .photo-header h2 {
@@ -121,8 +121,8 @@
          .card {
            padding: 20px;
            border-radius: 6px;
-           background-color: #FF8374;
-           color: white;
+           background-color: #C1C72C;
+           color: black;
            margin: 20px;
          }
          
@@ -158,24 +158,32 @@
                     <img id="profilePic" src="https://avatars3.githubusercontent.com/u/54955520?v=4">
                     <h1>Hi!</h1>
                     <h2 id="profileName">My name is John McCutchen</h2>
-                    <h3 id="company">Currently working at Bottomline Technologies </h3>
+                    <h3 id="company">Currently @ Bottomline Technologies </h3>
                     <div class="row links-nav ">
-                        <h4 id="city" class="col nav-link"><a href="https://maps.google.com/?q=Strafford, NH" target="_blank">Strafford, NH</a></h4>
+                        <h4 id="city" class="col nav-link">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://maps.google.com/?q=Strafford, NH" target="_blank">Strafford, NH</a>
+                        </h4>
                         <h4 id="gitHub" class="col nav-link">
+                        <i class="fab fa-github"></i>
                         <a href="https://github.com/jmccutchen" target="_blank">GitHub</a>
                         </h4>
-                        <h4 id="blog" class="col nav-link"><a href="" target="_blank">Blog</a></h4>
+                        <h4 id="blog" class="col nav-link">
+                        <i class="fas fa-blog"></i>
+                        <a href="" target="_blank">Blog</a>
+                        </h4>
                     </div>
                 </div>
             </div>
 
             <br>
             <br>
+            <br>
             <h3 class="text-center">I build things and teach people to code</h3>
 
             <div class="row">
-                <div id="publicRepo" class="card col">Public Repositories <br> 11</div>
-                <div id="followers" class="card col">Followers <br> 1</div>
+                <h4 id="publicRepo" class="card col">Public Repositories <br> 11</h4>
+                <h4 id="followers" class="card col">Followers <br> 1</h4>
             </div>
             <div class="row">
                 <div id="gitStars" class="card col">GitHub Stars <br> 0</div>
