@@ -190,14 +190,16 @@ function generateHTML(data, answers) {
         <main>
             <div class="wrapper">
                 <div class="photo-header">
-                    <img id="profilePic" src=${answers.data.avatar_url}>
+                    <img id="profilePic" src="${answers.data.avatar_url}">
                     <h1>Hi!</h1>
                     <h2 id="profileName">My name is ${answers.data.name}</h2>
-                    <h3 id="company">${answers.data.company} </h3>
+                    <h3 id="company">Currently working at ${answers.data.company} </h3>
                     <div class="row links-nav ">
-                        <h4 id="city" class="col nav-link" src="https://maps.google.com/?q=${data.location}" "target=_blank">${data.location}</h4>
-                        <h4 id="gitHub" class="col nav-link" scr=${answers.data.url} target="_blank">GitHub</h4>
-                        <h4 id="blog" class="col nav-link" src=${answers.data.blog} target="_blank">Blog</h4>
+                        <h4 id="city" class="col nav-link"><a href="https://maps.google.com/?q=${data.location}" target="_blank">${data.location}</a></h4>
+                        <h4 id="gitHub" class="col nav-link">
+                        <a href="${answers.data.html_url}" target="_blank">GitHub</a>
+                        </h4>
+                        <h4 id="blog" class="col nav-link"><a href="${answers.data.blog}" target="_blank">Blog</a></h4>
                     </div>
                 </div>
             </div>
@@ -223,9 +225,6 @@ function generateHTML(data, answers) {
 </body>`
 }
 
-// module.exports = {
-//   colors: colors,
-//   generateHTML: generateHTML
-// };
+
 
 module.exports = generateHTML;
