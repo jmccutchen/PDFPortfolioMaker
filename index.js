@@ -8,6 +8,7 @@ const puppeteer = require("puppeteer")
 const open = require("open")
 
 
+// questions for user when run in node
 function promptUser() {
     return inquirer
 
@@ -34,6 +35,7 @@ function promptUser() {
 
 promptUser()
     .then(data => {
+        // gets github username from above and makes an API call to github and then generates HTML file based on parameters
         let username = data.username;
     
         const getUsers = () => {
@@ -51,6 +53,7 @@ promptUser()
         getUsers()
 
     }).then(async () => {
+        // uses puppeteer to create PDF from the HTML file
         const browser = await puppeteer.launch();
         const page = await browser.newPage();
         const htmlDoc = fs.readFileSync("./Portfolio.html", "utf8");
@@ -63,8 +66,9 @@ promptUser()
 
         await browser.close();
 
+        // opens the PDF file
       }).then (async () => {
-        await open("./Portfolio.html")
+        await open("./portfolio.pdf")
 
       })
 
