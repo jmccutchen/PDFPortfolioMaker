@@ -15,7 +15,7 @@ npm index.js
 Demo
 ----
 
-![] (PDFPortfolioMakerdemo.gif)
+![](PDFPortfolioMakerdemo.gif)
 
 Author
 ------
