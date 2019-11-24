@@ -1,6 +1,6 @@
-// const data= require("./index.js")
 
 
+// color palette for HTML file based on user preference from prompts
 
 const colors = {
   green: {
@@ -29,8 +29,7 @@ const colors = {
   }
 };
 
-// console.log("in HTML data" + data.color);
-// console.log("answersHTML" + answers.data)
+
 
 function generateHTML(data, answers) {
   return `<!DOCTYPE html>

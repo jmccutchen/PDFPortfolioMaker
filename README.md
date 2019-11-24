@@ -12,6 +12,11 @@ Install latest version of Node.js and then run the below command in the root of 
 npm index.js
 ```
 
+Demo
+----
+
+![] (PDFPortfolioMakerdemo.gif)
+
 Author
 ------
 
